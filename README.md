@@ -16,6 +16,7 @@ A simple React application demonstrating a responsive RatingsWidget with dynamic
 ## Installation
 
 git clone https://github.com/sam0verboard/feefo-ui.git
+
 cd feefo-ui
 
 npm start
