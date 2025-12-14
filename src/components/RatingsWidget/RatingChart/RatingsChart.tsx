@@ -9,19 +9,17 @@ import { myTheme } from "../../../theme";
  * Displays a visual representation of the proportion of total ratings accounted for by the each rating.
  * @param ratings - Map of rating values to their counts
  */
-
-/** RatingsChart */
-export const RatingsChartContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${myTheme.spacing.small}em;
-`;
-
 type RatingsMap = Map<number, number>;
 
 type RatingsChartProps = {
   ratings: RatingsMap;
 };
+
+const RatingsChartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${myTheme.spacing.small}em;
+`;
 
 const getTotalCount = (ratings: RatingsMap): number => {
   let total = 0;

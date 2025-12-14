@@ -14,6 +14,11 @@ import { myTheme } from "../../../theme";
  *  <QualitativeRating rating={1} />           // "Poor"
  */
 
+type QualitativeRatingProps = {
+  averageRating: number;
+  labels?: string[];
+};
+
 const QualitativeRatingContainer = styled.div`
   color: ${myTheme.colors.dark};
   text-transform: uppercase;
@@ -32,11 +37,6 @@ const getLabel = (
 ): string => {
   const index = Math.min(labels.length - 1, Math.floor(averageRating));
   return averageRating >= max ? labels[labels.length - 1] : labels[index];
-};
-
-type QualitativeRatingProps = {
-  averageRating: number;
-  labels?: string[];
 };
 
 const QualitativeRating = ({

@@ -10,7 +10,11 @@ import { myTheme } from "../../theme";
  * Main wrapper component for the Ratings Widget
  * @param ratingCounts - Map of rating values to their counts
  */
-export const RatingsWidgetContainer = styled.div`
+type RatingsWidgetProps = {
+  ratingCounts: Map<number, number>;
+};
+
+const RatingsWidgetContainer = styled.div`
   border: 1px solid ${myTheme.colors.medium};
   background-color: ${myTheme.colors.background};
   padding: ${myTheme.spacing.medium}em;
@@ -22,9 +26,6 @@ export const RatingsWidgetContainer = styled.div`
   gap: ${myTheme.spacing.large}em;
 `;
 
-type RatingsWidgetProps = {
-  ratingCounts: Map<number, number>;
-};
 const getAverageRating = (ratingCounts: Map<number, number>) => {
   let total = 0;
   let count = 0;

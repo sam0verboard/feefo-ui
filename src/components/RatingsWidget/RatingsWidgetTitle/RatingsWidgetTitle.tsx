@@ -7,7 +7,7 @@ import { myTheme } from "../../../theme";
  * RatingsWidgetTitle
  * Displays component description and company logo.
  */
-export const RatingsWidgetTitleContainer = styled.div`
+const RatingsWidgetTitleContainer = styled.div`
   font-weight: ${myTheme.fonts.weights.regular};
   font-size: ${myTheme.fonts.size.regular}em;
   color: ${myTheme.colors.medium};
@@ -17,7 +17,7 @@ export const RatingsWidgetTitleContainer = styled.div`
   gap: ${myTheme.spacing.small}em;
 `;
 
-export const RatingsWidgetTitleIcon = styled(FeefoIcon).attrs({
+const RatingsWidgetTitleIcon = styled(FeefoIcon).attrs({
   role: "img",
   "aria-label": "Feefo logo",
 })`

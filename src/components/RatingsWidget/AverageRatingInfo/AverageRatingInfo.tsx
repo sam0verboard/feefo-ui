@@ -13,6 +13,11 @@ import PropTypes from "prop-types";
  * @param averageRating - The average rating value
  * @param maxRating - The maximum possible rating value
  */
+type AverageRatingInfoProps = {
+  averageRating: number;
+  maxRating: number;
+};
+
 const AverageRatingInfoContainer = styled.div`
   padding: ${myTheme.spacing.medium}em;
   display: flex;
@@ -20,11 +25,6 @@ const AverageRatingInfoContainer = styled.div`
   align-items: center;
   gap: ${myTheme.spacing.medium}em;
 `;
-
-type AverageRatingInfoProps = {
-  averageRating: number;
-  maxRating: number;
-};
 
 const AverageRatingInfo = ({
   averageRating,

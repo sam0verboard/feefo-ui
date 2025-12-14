@@ -10,6 +10,15 @@ import PropTypes from "prop-types";
  * @param averageRating - The average rating value
  * @param maxRating - The maximum possible rating value
  */
+type RatingBarProps = {
+  averageRating: number;
+  maxRating: number;
+};
+
+type StarContainerProps = {
+  fillpercent: number;
+  size: number;
+};
 
 const RatingContainer = styled.div`
   display: flex;
@@ -22,12 +31,7 @@ const RatingRow = styled.div`
   gap: ${myTheme.spacing.smallest}em;
 `;
 
-type StarContainerProps = {
-  fillpercent: number;
-  size: number;
-};
-
-export const StarContainer = styled.div<StarContainerProps>`
+const StarContainer = styled.div<StarContainerProps>`
   width: ${(props) => props.size}em;
   height: ${(props) => props.size}em;
   border-radius: ${(props) => props.size / 5}em;
@@ -42,16 +46,11 @@ export const StarContainer = styled.div<StarContainerProps>`
   padding: ${myTheme.spacing.smaller}em;
 `;
 
-export const RatingBarIcon = styled(RatingIconWhite)`
+const RatingBarIcon = styled(RatingIconWhite)`
   width: 100%;
   height: 100%;
   color: ${myTheme.colors.lighter};
 `;
-
-type RatingBarProps = {
-  averageRating: number;
-  maxRating: number;
-};
 
 const clamp = (v: number, a = 0, b = 100) => Math.max(a, Math.min(b, v));
 
