@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { styled } from "styled-components";
+import { myTheme } from "../../theme";
 
 /**
  * RatingCountsInput
@@ -7,18 +8,22 @@ import { styled } from "styled-components";
  * @param ratingCounts - Map of rating values to their counts
  * @param handleChange - Function to handle changes to rating counts
  */
-const RatingCountsInputContainer = styled.div``;
-const RatingCountsInputRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-`;
 
 type RatingCountsInputProps = {
   ratingCounts: Map<number, number>;
   handleChangeRating: (rating: number, value: string) => void;
   handleChangeStars: (add: boolean) => void;
 };
+
+const RatingCountsInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const RatingCountsInputRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: ${myTheme.spacing.medium}em;
+`;
 
 const RatingCountsInput = ({
   ratingCounts,

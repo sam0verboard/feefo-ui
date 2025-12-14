@@ -12,6 +12,11 @@ import RatingIcon from "../RatingIcon/RatingIcon";
  * @param count - The number of ratings with this value
  * @param total - The total number of ratings
  */
+type RatingCountBarProps = {
+  rating: number;
+  count: number;
+  total: number;
+};
 
 const RatingCountBarContainer = styled.div`
   display: flex;
@@ -29,12 +34,6 @@ const CountText = styled.div`
   color: ${myTheme.colors.medium};
   font-family: ${myTheme.fonts.family.primary};
 `;
-
-type RatingCountBarProps = {
-  rating: number;
-  count: number;
-  total: number;
-};
 
 const clamp = (v: number, a = 0, b = 100) => Math.max(a, Math.min(b, v));
 

@@ -10,6 +10,10 @@ import { ReactComponent as RatingCountBarIcon } from "../../../icons/feefo-star-
  * Displays a rating icon with its value.
  * @param rating - The rating value
  */
+type RatingIconProps = {
+  rating: string;
+};
+
 const RatingValue = styled.div`
   min-width: ${myTheme.spacing.small}em;
   text-align: left;
@@ -31,10 +35,6 @@ const IconWrapper = styled(RatingCountBarIcon)`
   display: flex;
   align-items: center;
 `;
-
-type RatingIconProps = {
-  rating: string;
-};
 
 const RatingIcon = ({ rating }: RatingIconProps) => {
   return (

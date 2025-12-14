@@ -11,6 +11,10 @@ import { myTheme } from "../../../theme";
  * Examples:
  *   <RatingText averageRating={1} maxRating={5} />  // "1 out of 5"
  */
+type RatingsTextProps = {
+  averageRating: number;
+  maxRating: number;
+};
 
 const RatingTextContainer = styled.div`
   letter-spacing: ${myTheme.fonts.spacing.wide}em;
@@ -20,11 +24,6 @@ const RatingTextContainer = styled.div`
   text-transform: uppercase;
   font-size: ${myTheme.fonts.size.regular}em;
 `;
-
-type RatingsTextProps = {
-  averageRating: number;
-  maxRating: number;
-};
 
 const RatingText = ({ averageRating, maxRating }: RatingsTextProps) => {
   const text = averageRating.toFixed(1) + " out of " + maxRating;
