@@ -16,7 +16,7 @@ type RatingsWidgetProps = {
 
 const RatingsWidgetContainer = styled.div`
   border: 1px solid ${myTheme.colors.medium};
-  background-color: ${myTheme.colors.background};
+  background-color: ${myTheme.colors.widget};
   padding: ${myTheme.spacing.medium}em;
   border-radius: ${myTheme.spacing.medium}em;
   max-width: 18em;

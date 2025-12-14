@@ -16,6 +16,7 @@ import { myTheme } from "../../../theme";
 
 type QualitativeRatingProps = {
   averageRating: number;
+  maxRating?: number;
   labels?: string[];
 };
 
@@ -28,26 +29,35 @@ const QualitativeRatingContainer = styled.div`
   font-size: ${myTheme.fonts.size.large}em;
 `;
 
-const defaultLabels = ["Poor", "Okay", "Good", "Great", "Excellent"];
+const defaultLabels = ["Poor", "Okay", "Average", "Good", "Excellent"];
 
 const getLabel = (
   averageRating: number,
   max: number,
   labels: string[]
 ): string => {
-  const index = Math.min(labels.length - 1, Math.floor(averageRating));
-  return averageRating >= max ? labels[labels.length - 1] : labels[index];
+  if (labels.length === 0 || max <= 0) return "";
+
+  const percentage = Math.min(Math.max(averageRating / max, 0), 1);
+
+  const index = Math.min(
+    labels.length - 1,
+    Math.floor(percentage * labels.length)
+  );
+
+  return labels[index];
 };
 
 const QualitativeRating = ({
   averageRating,
   labels = defaultLabels,
+  maxRating = defaultLabels.length,
 }: QualitativeRatingProps) => {
   if (!isFinite(averageRating) || averageRating < 0 || labels.length <= 0) {
     return <span aria-label="No rating">-</span>;
   }
 
-  const label = getLabel(averageRating, labels.length, labels);
+  const label = getLabel(averageRating, maxRating, labels);
 
   return (
     <QualitativeRatingContainer>
@@ -62,6 +72,7 @@ const QualitativeRating = ({
 
 QualitativeRating.propTypes = {
   averageRating: PropTypes.number.isRequired,
+  maxRating: PropTypes.number,
   labels: PropTypes.arrayOf(PropTypes.string),
 };
 

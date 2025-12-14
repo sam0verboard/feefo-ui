@@ -19,9 +19,9 @@ export const myTheme: Theme = {
     },
   },
   colors: {
-    background: "white",
-    dark: "black",
-    medium: "slate",
+    widget: "white",
+    dark: "darkslategrey",
+    medium: "slategrey",
     lighter: "lightgrey",
     orange: "#ffcb34",
   },

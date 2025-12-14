@@ -20,7 +20,7 @@ declare module "styled-components" {
       };
     };
     colors: {
-      background: string;
+      widget: string;
       dark: string;
       medium: string;
       lighter: string;

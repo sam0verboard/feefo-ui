@@ -32,7 +32,7 @@ const AverageRatingInfo = ({
 }: AverageRatingInfoProps) => {
   return (
     <AverageRatingInfoContainer>
-      <QualitativeRating averageRating={averageRating} />
+      <QualitativeRating averageRating={averageRating} maxRating={maxRating} />
       <RatingBar averageRating={averageRating} maxRating={maxRating} />
       <RatingText averageRating={averageRating} maxRating={maxRating} />
       <RatingsWidgetTitle />

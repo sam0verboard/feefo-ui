@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { styled } from "styled-components";
 import { myTheme } from "../../../theme";
-import { ReactComponent as RatingIconWhite } from "../../../icons/feefo-star-white.svg";
+import { ReactComponent as RatingIconWhite } from "../../../assets/icons/feefo-star-white.svg";
 import PropTypes from "prop-types";
 
 /**

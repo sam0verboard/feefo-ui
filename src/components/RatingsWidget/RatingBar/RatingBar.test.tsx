@@ -4,7 +4,7 @@ import RatingBar from "./RatingBar";
 /**
  * Mock SVG icon import
  */
-jest.mock("../../../icons/feefo-star-white.svg", () => ({
+jest.mock("../../../assets/icons/feefo-star-white.svg", () => ({
   ReactComponent: () => <svg data-testid="rating-star-icon" />,
 }));
 
